@@ -9,7 +9,8 @@ node {
         /* Push the container to the custom Registry */
         customImage.push()
     }
-   
+    
+  stages {
     stage ('Push image to Artifactory') {
         steps {
             rtDockerPush(
@@ -22,5 +23,6 @@ node {
             )
         }
     }
-    
+   
+  }
 }
